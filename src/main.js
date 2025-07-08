@@ -1,18 +1,21 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 
+let mainWindow;
+
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     fullscreen: true,
     frame: false,
     icon: path.join(__dirname, "../build/icon.ico"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
-      contextIsolation: true
+      contextIsolation: true,
+      nodeIntegration: false
     }
   });
 
-  mainWindow.loadURL("https://administrador.perrosenmexico.com");
+  mainWindow.loadFile(path.join(__dirname, "index.html"));
 }
 
 app.whenReady().then(() => {
@@ -25,4 +28,22 @@ app.whenReady().then(() => {
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+});
+
+ipcMain.on("go-back", () => {
+  if (mainWindow && mainWindow.webContents.canGoBack()) {
+    mainWindow.webContents.goBack();
+  }
+});
+
+ipcMain.on("go-home", () => {
+  if (mainWindow) {
+    mainWindow.webContents.loadURL("https://administrador.perrosenmexico.com");
+  }
+});
+
+ipcMain.on("close-app", () => {
+  if (mainWindow) {
+    mainWindow.close();
+  }
 });
