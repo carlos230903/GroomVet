@@ -1,0 +1,25 @@
+{
+  "name": "perrosenmexico-desktop",
+  "version": "1.0.0",
+  "description": "Aplicación de escritorio para https://administrador.perrosenmexico.com",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.perrosenmexico.admin",
+    "productName": "PerrosEnMexicoAdmin",
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.6.0"
+  }
+}
