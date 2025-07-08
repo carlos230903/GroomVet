@@ -1,7 +1,7 @@
 {
-  "name": "perrosenmexico-desktop",
-  "version": "1.0.0",
-  "description": "Aplicación de escritorio para https://administrador.perrosenmexico.com",
+  "name": "perrosenmexico-desktop-v2",
+  "version": "1.1.0",
+  "description": "App escritorio con controles personalizados para Perros en México",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",

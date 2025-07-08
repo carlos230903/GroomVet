@@ -1,32 +1,17 @@
-# Perros En México - App de Escritorio
+# Perros En México - App Escritorio V2
 
-Aplicación para Windows en pantalla completa que muestra el sistema web [https://administrador.perrosenmexico.com](https://administrador.perrosenmexico.com)
+App en pantalla completa con barra de navegación personalizada.
 
-## 🛠 Requisitos
+## Controles integrados:
+- Botón "Atrás"
+- Botón "Inicio"
+- Botón "Cerrar"
 
-- Node.js (v18+ recomendado)
-- npm
-
-## 🚀 Instalación
+## 🚀 Instrucciones
 
 ```bash
 npm install
-```
-
-## ▶️ Ejecutar en modo desarrollo
-
-```bash
-npm start
-```
-
-## 🏗 Compilar instalador `.exe`
-
-```bash
 npm run dist
 ```
 
-El archivo `.exe` estará en la carpeta `dist/`.
-
-## 📦 Icono
-
-Incluye el archivo `icon.ico` dentro de la carpeta `build/`.
+El instalador estará en la carpeta `dist/`.
